@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuyZone</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #070b14;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  max-width: 480px;
+  margin: auto;
+  min-height: 100vh;
+  padding: 18px;
+  padding-bottom: 90px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #168cff;
+}
+
+.lang {
+  background: #121a29;
+  border: 1px solid #26344d;
+  padding: 9px 13px;
+  border-radius: 12px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.game {
+  background: linear-gradient(135deg,#101b31,#0b1220);
+  border: 1px solid #1e3558;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.game h2 {
+  margin-bottom: 7px;
+}
+
+.game p {
+  color: #8f9bb0;
+}
+
+input {
+  width: 100%;
+  background: #0d1422;
+  border: 1px solid #263957;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 10px 0 18px;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #168cff;
+}
+
+.section {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.packages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.package {
+  background: #101827;
+  border: 1px solid #233654;
+  border-radius: 15px;
+  padding: 17px;
+  cursor: pointer;
+}
+
+.package:hover {
+  border-color: #168cff;
+}
+
+.gold {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.price {
+  color: #4da7ff;
+  margin-top: 7px;
+}
+
+.buy {
+  width: 100%;
+  border: 0;
+  background: #168cff;
+  color: white;
+  padding: 16px;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: #0b111d;
+  border-top: 1px solid #1d2a40;
+  display: flex;
+  justify-content: space-around;
+  padding: 14px 5px;
+}
+
+.bottom div {
+  color: #8995aa;
+  font-size: 12px;
+  text-align: center;
+}
+
+.bottom .active {
+  color: #168cff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <div class="header">
+    <div class="logo">Buy<span>Zone</span></div>
+    <div class="lang">🇷🇺 RU</div>
+  </div>
+
+  <div class="title">🎮 Донат в игры</div>
+
+  <div class="game">
+    <h2>🔫 Blood Strike</h2>
+    <p>Пополнение Gold</p>
+  </div>
+
+  <div class="section">Player ID</div>
+
+  <input
+    type="text"
+    placeholder="Введите ID игрока"
+  >
+
+  <div class="section">Выберите пакет</div>
+
+  <div class="packages">
+
+    <div class="package">
+      <div class="gold">100 Gold</div>
+      <div class="price">99 ₽</div>
+    </div>
+
+    <div class="package">
+      <div class="gold">300 Gold</div>
+      <div class="price">249 ₽</div>
+    </div>
+
+    <div class="package">
+      <div class="gold">500 Gold</div>
+      <div class="price">399 ₽</div>
+    </div>
+
+    <div class="package">
+      <div class="gold">1000 Gold</div>
+      <div class="price">699 ₽</div>
+    </div>
+
+  </div>
+
+  <button class="buy">💳 Купить</button>
+
+</div>
+
+<div class="bottom">
+  <div class="active">🏠<br>Главная</div>
+  <div>🎮<br>Игры</div>
+  <div>📦<br>Заказы</div>
+  <div>👤<br>Профиль</div>
+</div>
+
+</body>
+</html>
