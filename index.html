@@ -186,27 +186,27 @@ input:focus {
 
   <div class="packages">
 
-    <div class="package">
-      <div class="gold">100 Gold</div>
-      <div class="price">99 ₽</div>
-    </div>
-
-    <div class="package">
-      <div class="gold">300 Gold</div>
-      <div class="price">249 ₽</div>
-    </div>
-
-    <div class="package">
-      <div class="gold">500 Gold</div>
-      <div class="price">399 ₽</div>
-    </div>
-
-    <div class="package">
-      <div class="gold">1000 Gold</div>
-      <div class="price">699 ₽</div>
-    </div>
-
+  <div class="package" onclick="selectPackage(this, '100 Gold', '99 ₽')">
+    <div class="gold">100 Gold</div>
+    <div class="price">99 ₽</div>
   </div>
+
+  <div class="package" onclick="selectPackage(this, '300 Gold', '249 ₽')">
+    <div class="gold">300 Gold</div>
+    <div class="price">249 ₽</div>
+  </div>
+
+  <div class="package" onclick="selectPackage(this, '500 Gold', '399 ₽')">
+    <div class="gold">500 Gold</div>
+    <div class="price">399 ₽</div>
+  </div>
+
+  <div class="package" onclick="selectPackage(this, '1000 Gold', '699 ₽')">
+    <div class="gold">1000 Gold</div>
+    <div class="price">699 ₽</div>
+  </div>
+
+</div>
 
   <button class="buy" onclick="buyGame()">💳 Купить</button>
 
