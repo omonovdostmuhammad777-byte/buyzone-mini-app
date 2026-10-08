@@ -13,84 +13,82 @@
 }
 
 body {
-  background: #070b14;
-  color: white;
   font-family: Arial, sans-serif;
+  background: #0b0f17;
+  color: white;
+  min-height: 100vh;
 }
 
-.app {
-  max-width: 480px;
+.container {
+  max-width: 500px;
   margin: auto;
-  min-height: 100vh;
-  padding: 18px;
-  padding-bottom: 90px;
+  padding: 20px;
+  padding-bottom: 100px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .logo {
-  font-size: 25px;
+  font-size: 28px;
   font-weight: bold;
 }
 
 .logo span {
-  color: #168cff;
+  color: #00e5ff;
 }
 
 .lang {
-  background: #121a29;
-  border: 1px solid #26344d;
-  padding: 9px 13px;
-  border-radius: 12px;
+  background: #151c28;
+  padding: 8px 12px;
+  border-radius: 10px;
 }
 
 .title {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .game {
-  background: linear-gradient(135deg,#101b31,#0b1220);
-  border: 1px solid #1e3558;
-  border-radius: 18px;
-  padding: 18px;
-  margin-bottom: 18px;
+  background: #151c28;
+  border: 1px solid #273244;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 25px;
 }
 
 .game h2 {
-  margin-bottom: 7px;
+  margin-bottom: 8px;
 }
 
 .game p {
-  color: #8f9bb0;
+  color: #9aa7b8;
+}
+
+.section {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 18px 0 10px;
 }
 
 input {
   width: 100%;
-  background: #0d1422;
-  border: 1px solid #263957;
-  color: white;
   padding: 15px;
+  border: 1px solid #303b4d;
   border-radius: 12px;
-  margin: 10px 0 18px;
-  font-size: 15px;
+  background: #151c28;
+  color: white;
+  font-size: 16px;
   outline: none;
 }
 
 input:focus {
-  border-color: #168cff;
-}
-
-.section {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 12px;
+  border-color: #00e5ff;
 }
 
 .packages {
@@ -100,68 +98,139 @@ input:focus {
 }
 
 .package {
-  background: #101827;
-  border: 1px solid #233654;
-  border-radius: 15px;
-  padding: 17px;
+  background: #151c28;
+  border: 2px solid #273244;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .package:hover {
-  border-color: #168cff;
+  border-color: #00e5ff;
+}
+
+.package.selected {
+  border-color: #00e5ff;
+  background: #102631;
 }
 
 .gold {
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .price {
-  color: #4da7ff;
-  margin-top: 7px;
+  color: #00e5ff;
+  font-size: 17px;
 }
 
 .buy {
   width: 100%;
-  border: 0;
-  background: #168cff;
-  color: white;
+  margin-top: 22px;
   padding: 16px;
-  border-radius: 14px;
-  font-size: 17px;
+  border: none;
+  border-radius: 13px;
+  background: #00e5ff;
+  color: #071018;
+  font-size: 18px;
   font-weight: bold;
-  margin-top: 20px;
+  cursor: pointer;
+}
+
+.buy:active {
+  transform: scale(0.98);
 }
 
 .bottom {
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 480px;
-  background: #0b111d;
-  border-top: 1px solid #1d2a40;
+  left: 0;
+  right: 0;
+  background: #111722;
+  border-top: 1px solid #273244;
   display: flex;
   justify-content: space-around;
-  padding: 14px 5px;
+  padding: 12px 5px;
 }
 
 .bottom div {
-  color: #8995aa;
-  font-size: 12px;
   text-align: center;
+  color: #7e8a9b;
+  font-size: 13px;
 }
 
 .bottom .active {
-  color: #168cff;
+  color: #00e5ff;
+}
+
+/* Buyurtma oynasi */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 420px;
+  background: #151c28;
+  border: 1px solid #303b4d;
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.modal-box h2 {
+  margin-bottom: 18px;
+}
+
+.order-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #273244;
+}
+
+.order-line span:first-child {
+  color: #9aa7b8;
+}
+
+.confirm {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 12px;
+  background: #00e5ff;
+  color: #071018;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.close {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid #344154;
+  border-radius: 12px;
+  background: transparent;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
 }
 </style>
 </head>
 
 <body>
 
-<div class="app">
+<div class="container">
 
   <div class="header">
     <div class="logo">Buy<span>Zone</span></div>
@@ -178,6 +247,7 @@ input:focus {
   <div class="section">Player ID</div>
 
   <input
+    id="playerId"
     type="text"
     placeholder="Введите ID игрока"
   >
@@ -186,42 +256,29 @@ input:focus {
 
   <div class="packages">
 
-  <div class="package" onclick="selectPackage(this, '100 Gold', '99 ₽')">
-    <div class="gold">100 Gold</div>
-    <div class="price">99 ₽</div>
-  </div>
+    <div class="package" onclick="selectPackage(this, '100 Gold', '99 ₽')">
+      <div class="gold">100 Gold</div>
+      <div class="price">99 ₽</div>
+    </div>
 
-  <div class="package" onclick="selectPackage(this, '300 Gold', '249 ₽')">
-    <div class="gold">300 Gold</div>
-    <div class="price">249 ₽</div>
-  </div>
+    <div class="package" onclick="selectPackage(this, '300 Gold', '249 ₽')">
+      <div class="gold">300 Gold</div>
+      <div class="price">249 ₽</div>
+    </div>
 
-  <div class="package" onclick="selectPackage(this, '500 Gold', '399 ₽')">
-    <div class="gold">500 Gold</div>
-    <div class="price">399 ₽</div>
-  </div>
+    <div class="package" onclick="selectPackage(this, '500 Gold', '399 ₽')">
+      <div class="gold">500 Gold</div>
+      <div class="price">399 ₽</div>
+    </div>
 
-  <div class="package" onclick="selectPackage(this, '1000 Gold', '699 ₽')">
-    <div class="gold">1000 Gold</div>
-    <div class="price">699 ₽</div>
-  </div>
+    <div class="package" onclick="selectPackage(this, '1000 Gold', '699 ₽')">
+      <div class="gold">1000 Gold</div>
+      <div class="price">699 ₽</div>
+    </div>
 
-</div>
+  </div>
 
   <button class="buy" onclick="buyGame()">💳 Купить</button>
-
-<script>
-function buyGame() {
-  const playerId = document.querySelector('input').value;
-
-  if (!playerId) {
-    alert("Пожалуйста, введите Player ID");
-    return;
-  }
-
-  alert("Заказ создан!\nPlayer ID: " + playerId);
-}
-</script>
 
 </div>
 
@@ -231,6 +288,105 @@ function buyGame() {
   <div>📦<br>Заказы</div>
   <div>👤<br>Профиль</div>
 </div>
+
+<!-- Buyurtma oynasi -->
+
+<div class="modal" id="orderModal">
+
+  <div class="modal-box">
+
+    <h2>📦 Ваш заказ</h2>
+
+    <div class="order-line">
+      <span>Игра</span>
+      <span>Blood Strike</span>
+    </div>
+
+    <div class="order-line">
+      <span>Player ID</span>
+      <span id="orderPlayer"></span>
+    </div>
+
+    <div class="order-line">
+      <span>Пакет</span>
+      <span id="orderPackage"></span>
+    </div>
+
+    <div class="order-line">
+      <span>Цена</span>
+      <span id="orderPrice"></span>
+    </div>
+
+    <button class="confirm" onclick="confirmOrder()">
+      💳 Перейти к оплате
+    </button>
+
+    <button class="close" onclick="closeModal()">
+      Закрыть
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+
+let selectedPackage = null;
+let selectedPrice = null;
+
+function selectPackage(element, packageName, price) {
+
+  document.querySelectorAll('.package').forEach(function(item) {
+    item.classList.remove('selected');
+  });
+
+  element.classList.add('selected');
+
+  selectedPackage = packageName;
+  selectedPrice = price;
+}
+
+function buyGame() {
+
+  const playerId = document.getElementById('playerId').value.trim();
+
+  if (!playerId) {
+    alert('Пожалуйста, введите Player ID');
+    return;
+  }
+
+  if (!selectedPackage) {
+    alert('Пожалуйста, выберите пакет Gold');
+    return;
+  }
+
+  document.getElementById('orderPlayer').textContent = playerId;
+  document.getElementById('orderPackage').textContent = selectedPackage;
+  document.getElementById('orderPrice').textContent = selectedPrice;
+
+  document.getElementById('orderModal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('orderModal').style.display = 'none';
+}
+
+function confirmOrder() {
+
+  alert(
+    'Заказ принят!\\n\\n' +
+    'Blood Strike\\n' +
+    'Player ID: ' +
+    document.getElementById('orderPlayer').textContent +
+    '\\n' +
+    document.getElementById('orderPackage').textContent +
+    ' — ' +
+    document.getElementById('orderPrice').textContent
+  );
+
+}
+
+</script>
 
 </body>
 </html>
