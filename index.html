@@ -208,7 +208,20 @@ input:focus {
 
   </div>
 
-  <button class="buy">💳 Купить</button>
+  <button class="buy" onclick="buyGame()">💳 Купить</button>
+
+<script>
+function buyGame() {
+  const playerId = document.querySelector('input').value;
+
+  if (!playerId) {
+    alert("Пожалуйста, введите Player ID");
+    return;
+  }
+
+  alert("Заказ создан!\nPlayer ID: " + playerId);
+}
+</script>
 
 </div>
 
